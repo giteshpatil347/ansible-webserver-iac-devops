@@ -1,0 +1,22 @@
+---
+# Company & Web Server Configuration
+company_name: "ABC Corporation"
+environment: "Production"
+http_port: 80
+web_root: "/var/www/html"
+
+# OS-specific Apache variables (defaults to Amazon Linux / RHEL)
+apache_package: "httpd"
+apache_service: "httpd"
+
+# Administrative User Configuration
+admin_users:
+  - name: "webadmin"
+    groups: "wheel"
+    state: "present"
+    # Replace with your actual public SSH key
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7... admin@abccorp.com"
+  - name: "deploy_user"
+    groups: "wheel"
+    state: "present"
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD9... deploy@abccorp.com"
